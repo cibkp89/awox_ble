@@ -1,0 +1,35 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "AwoX Connect lamp",
+        "description": "Pick the lamp. Only Telink/AwoX Connect lamps (manufacturer id 0x0160) seen by a connectable adapter or ESPHome proxy are listed.",
+        "data": {
+          "address": "Lamp"
+        }
+      },
+      "credentials": {
+        "title": "Mesh credentials",
+        "description": "Lamp {address}, seen via {via} at RSSI {rssi} dBm.\n\nEnter the mesh name and password (the same values as `mesh_name` / `mesh_password` in the ESPHome hub YAML). The lamp accepts only one BLE connection: switch off the ESPHome hub and close the AwoX/EGLO app before testing.",
+        "data": {
+          "mesh_name": "Mesh name",
+          "mesh_password": "Mesh password",
+          "keep_connected": "Keep connected (instant state updates, uses 1 proxy slot)",
+          "test_connection": "Test connection now"
+        }
+      }
+    },
+    "error": {
+      "not_found": "The lamp is not visible to any connectable Bluetooth adapter/proxy right now.",
+      "invalid_auth": "The lamp rejected the mesh name/password.",
+      "cannot_connect": "Could not connect. Is another device (ESPHome hub, app) still connected to the lamp? See the log for details.",
+      "too_long": "Max. 16 bytes."
+    },
+    "abort": {
+      "already_configured": "This lamp is already configured.",
+      "no_devices_found": "No AwoX Connect lamp found via Home Assistant Bluetooth.",
+      "unpaired": "Factory-reset device (\"unpaired\") - not part of a mesh, ignored."
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "domain": "awox_ble",
+  "name": "AwoX Connect (BLE Proxy)",
+  "bluetooth": [
+    { "manufacturer_id": 352, "connectable": true }
+  ],
+  "codeowners": ["@cibkp89"],
+  "config_flow": true,
+  "dependencies": ["bluetooth_adapters"],
+  "documentation": "https://github.com/cibkp89/awox_ble",
+  "integration_type": "device",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/cibkp89/awox_ble/issues",
+  "loggers": ["bleak_esphome", "bleak_retry_connector"],
+  "requirements": [],
+  "version": "0.3.0"
+}

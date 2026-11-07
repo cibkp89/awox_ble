@@ -1,0 +1,35 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "AwoX-Connect-Leuchte",
+        "description": "Leuchte auswählen. Angezeigt werden nur Telink-/AwoX-Connect-Leuchten (Hersteller-ID 0x0160), die ein verbindungsfähiger Adapter oder ESPHome-Proxy sieht.",
+        "data": {
+          "address": "Leuchte"
+        }
+      },
+      "credentials": {
+        "title": "Mesh-Zugangsdaten",
+        "description": "Leuchte {address}, gesehen über {via} mit RSSI {rssi} dBm.\n\nMesh-Name und Passwort eingeben (dieselben Werte wie `mesh_name` / `mesh_password` in der YAML des ESPHome-Hubs). Die Leuchte nimmt nur eine BLE-Verbindung an: vor dem Test den ESPHome-Hub abschalten und die AwoX-/EGLO-App schließen.",
+        "data": {
+          "mesh_name": "Mesh-Name",
+          "mesh_password": "Mesh-Passwort",
+          "keep_connected": "Verbindung halten (sofortige Statusupdates, belegt 1 Proxy-Slot)",
+          "test_connection": "Verbindung jetzt testen"
+        }
+      }
+    },
+    "error": {
+      "not_found": "Die Leuchte ist gerade für keinen verbindungsfähigen Bluetooth-Adapter/-Proxy sichtbar.",
+      "invalid_auth": "Die Leuchte hat Mesh-Name/Passwort abgelehnt.",
+      "cannot_connect": "Verbindung fehlgeschlagen. Ist noch ein anderes Gerät (ESPHome-Hub, App) mit der Leuchte verbunden? Details im Log.",
+      "too_long": "Max. 16 Bytes."
+    },
+    "abort": {
+      "already_configured": "Diese Leuchte ist bereits eingerichtet.",
+      "no_devices_found": "Keine AwoX-Connect-Leuchte über Home Assistant Bluetooth gefunden.",
+      "unpaired": "Gerät im Werkszustand (\"unpaired\") – keinem Mesh zugeordnet, wird ignoriert."
+    }
+  }
+}
